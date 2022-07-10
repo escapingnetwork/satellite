@@ -1,14 +1,14 @@
 # evendev
 VSCode Remote Development Container for Urbit
 
-This repository contains the files for running a container with Alpine Linux alongside another container with Urbit booting a Comet.
+This repository contains the files for running a container with Alpine Linux alongside another container with Urbit.
 
-## Access Your Development Comet
-Once the comet boot successfully access Urbit via Browser on http://localhost:81
+## Access Your Development Ship
+Once the ship boot successfully access Urbit via Browser on http://localhost:81
 
 You can see Urbit output by running:
 ```
-$ docker logs urbit-comet --follow
+$ docker logs urbit-fakezod --follow
 ```
 
 
@@ -18,13 +18,13 @@ This docker image includes tools for retrieving and resetting the Landscape logi
 
 Getting the code:
 ```
-$ docker container exec urbit-comet /bin/get-urbit-code
+$ docker container exec urbit-fakezod /bin/get-urbit-code
 sampel-sampel-sampel-sampel
 ```
 
 Resetting the code:
 ```
-$ docker container exec urbit-comet /bin/reset-urbit-code
+$ docker container exec urbit-fakezod /bin/reset-urbit-code
 OK
 ```
 
@@ -39,3 +39,5 @@ Check the official documentation at https://developers.urbit.org/
 
 ## TODO
  - [ ] Attach VSCode terminal to Urbit container. So far Urbit crashes with STDIN on.
+ - [ ] Extend README.md to explain how to add another Urbit container to test communication between ships
+ - [ ] Extend README.md to explain how to boot a comet instead of fakezod

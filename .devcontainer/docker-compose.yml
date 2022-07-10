@@ -1,13 +1,22 @@
 version: '3'
 
 services:
-  urbit:
-    container_name: urbit-comet
-    image: tloncorp/urbit:latest
-    volumes:
-    - ..:/urbit
-    ports:
-    - 81:80
+  urbit-zod:
+      container_name: urbit-fakezod
+      image: tloncorp/urbit:latest
+      command: /bin/urbit -t -F zod
+      volumes:
+      - ../fakezod:/urbit
+      ports:
+      - 81:80
+  # urbit-bus:
+  #     container_name: urbit-fakebus
+  #     image: tloncorp/urbit:latest
+  #     command: /bin/urbit -t -F bus
+  #     volumes:
+  #     - ../fakebus:/urbit
+  #     ports:
+  #     - 82:80
   development:
     container_name: urbit-development
     build:
