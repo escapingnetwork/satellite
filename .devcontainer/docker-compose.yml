@@ -2,20 +2,21 @@ version: '3'
 
 services:
   urbit-zod:
-      container_name: urbit-fakezod
-      image: tloncorp/urbit:latest
-      command: /bin/urbit -t -F zod
-      volumes:
+    container_name: urbit-fakezod
+    image: tloncorp/urbit:latest
+    working_dir: /urbit
+    command: sh -c "[ -f ./zod/.vere.lock ] && rm /urbit/zod/.vere.lock && /bin/start-urbit ||  /bin/urbit -t -F zod -p 34343 -x && /bin/start-urbit"
+    volumes:
       - ../fakezod:/urbit
-      ports:
+    ports:
       - 81:80
   # urbit-bus:
-  #     container_name: urbit-fakebus
-  #     image: tloncorp/urbit:latest
-  #     command: /bin/urbit -t -F bus
-  #     volumes:
+  #   container_name: urbit-fakebus
+  #   image: tloncorp/urbit:latest
+  #   command: sh -c "[ -f ./bus/.vere.lock ] && rm /urbit/bus/.vere.lock && /bin/start-urbit || /bin/urbit -t -F bus -p 34343 -x && /bin/start-urbit"
+  #   volumes:
   #     - ../fakebus:/urbit
-  #     ports:
+  #   ports:
   #     - 82:80
   development:
     container_name: urbit-development
@@ -30,7 +31,7 @@ services:
       # Forwards the local Docker socket to the container.
       - /var/run/docker.sock:/var/run/docker-host.sock
       # Update this to wherever you want VS Code to mount the folder of your project
-      - ..:/workspace:cached
+      - ..:/workspace
 
     # Overrides default command so things don't shut down after the process ends.
     entrypoint: /usr/local/share/docker-init.sh
