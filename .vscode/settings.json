@@ -1,6 +1,7 @@
 {
     "hoon.languageServer.code": "lidlut-tabwed-pillex-ridrup",
     "hoon.languageServer.enabled": true,
-    "hoon.languageServer.port": 81,
-    "hoon.languageServer.ship": "~zod"
+    "hoon.languageServer.port": 80,
+    "hoon.languageServer.ship": "zod",
+    "hoon.languageServer.url": "http://localhost"
 }
