@@ -1,7 +1,15 @@
 # satellite
-VSCode Remote Development Container for Urbit
+VSCode Remote Development Container for [Urbit](urbit.org/)
 
-This repository contains the files for running a container with Urbit CLI and Tlon Bouncer.
+This repository contains the files for running a container with Urbit CLI and [Bouncer](https://github.com/tloncorp/bouncer).
+
+## Requeriments
+
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Docker](https://www.docker.com/)
+- [VSCode - Remote Development Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+
+For more information about developing inside a Container [check this documentation](https://code.visualstudio.com/docs/remote/containers).
 
 ## Access Your Development Ship
 Once VSCode is attached to the running container it will start Urbit Fakezod, access Urbit via Browser on http://localhost:81
