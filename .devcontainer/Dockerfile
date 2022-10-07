@@ -18,5 +18,5 @@ RUN gem install bundler
 # [Optional] Uncomment this line to install global node packages.
 RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g @urbit/hoon-language-server" 2>&1
 
-RUN cd /home/vscode && su vscode -c "curl -L https://urbit.org/install/linux64/latest | tar xzk --strip=1"
+RUN cd /home/vscode && su vscode -c "curl -L https://urbit.org/install/linux64/latest | tar xzk --strip=1" && mv /home/vscode/urbit /usr/sbin
 RUN cd /home/vscode && su vscode -c "git clone https://github.com/tloncorp/bouncer.git" && cd /home/vscode/bouncer && su vscode -c "bundle"

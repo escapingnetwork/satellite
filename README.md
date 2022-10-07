@@ -17,21 +17,32 @@ This repository include the files for running a container with
 
 For more information about developing inside a Container [check this documentation](https://code.visualstudio.com/docs/remote/containers).
 
-## Access Your Development Ship
-Once VSCode is attached to the running container it will start Urbit Fakezod, access Urbit via Browser on http://localhost:81
+## Run Urbit
+Once VSCode is attached to the running container, you should start Urbit fakezod.
+```
+urbit -F zod
+```
+If you have previously started fakezod just run
+```
+urbit zod
+```
+
+Usually you would access Urbit via Browser on http://localhost:81
 
 
 ### Getting Urbit +code
 
-Get the code writting the following command on the VSCode terminal runninng Urbit:
+Once you get to the `dojo>` prompt, get the code writting the following command on the VSCode terminal runninng Urbit:
 ```
 +code
 ```
 
 ### Start Urbit Language Server
+For Hoon Language Server to work you should start the Language Server on your Urbit instance, write the following command on the `dojo>` prompt:
 ```
 |start %language-server
 ```
+
 
 ## Start Development
 

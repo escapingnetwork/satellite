@@ -32,7 +32,7 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "rsync -a --exclude='.*' /home/vscode/bouncer .",
 
-	"postAttachCommand": "[ -d /workspaces/satellite/zod ] && /home/vscode/urbit zod || [ ! -d /workspaces/satellite/zod ] && /home/vscode/urbit -F zod",
+	// "postAttachCommand": "[ -d /workspaces/satellite/zod ] && /home/vscode/urbit zod || [ ! -d /workspaces/satellite/zod ] && /home/vscode/urbit -F zod",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
